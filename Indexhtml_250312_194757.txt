@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calculate your LIC policy maturity amount easily with our LIC Maturity Calculator. Get accurate results instantly and plan your finances better.">
+  <meta name="keywords" content="LIC Maturity Calculator, LIC Policy Calculator, LIC Maturity Amount, LIC Plan Calculator, LIC Investment Calculator">
+  <meta name="author" content="Vaidick Healing">
+  <title>LIC Maturity Calculator - Calculate Your LIC Policy Maturity Amount</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #004a8f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      font-size: 1.2rem;
+    }
+
+    .header-ad, .footer-ad, .sidebar {
+      background-color: #e0e0e0;
+      padding: 10px;
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .calculator-container {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .calculator-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #004a8f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #003366;
+    }
+
+    #result {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #result h3 {
+      font-size: 1.5rem;
+    }
+
+    .instructions {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .instructions h3 {
+      margin-bottom: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #004a8f;
+      color: white;
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 120px;
+      padding: 10px;
+      background-color: #e0e0e0;
+    }
+
+    .left-sidebar {
+      left: 0;
+    }
+
+    .right-sidebar {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Ad Space -->
+  <header>
+    <div class="header-ad">
+      <p>Ad Space (Header)</p>
+    </div>
+    <h1>LIC Maturity Calculator</h1>
+    <p>Calculate your LIC policy maturity amount in seconds!</p>
+  </header>
+
+  <!-- Main Calculator Section -->
+  <main>
+    <div class="calculator-container">
+      <h2>LIC Maturity Calculator</h2>
+      <form id="licCalculator">
+        <label for="policyAmount">Policy Amount (₹):</label>
+        <input type="number" id="policyAmount" placeholder="Enter policy amount" required>
+
+        <label for="policyTerm">Policy Term (Years):</label>
+        <input type="number" id="policyTerm" placeholder="Enter policy term" required>
+
+        <label for="interestRate">Interest Rate (%):</label>
+        <input type="number" id="interestRate" placeholder="Enter interest rate" required>
+
+        <button type="submit">Calculate Maturity Amount</button>
+      </form>
+      <div id="result">
+        <h3>Your Maturity Amount: <span id="maturityAmount">₹0</span></h3>
+      </div>
+    </div>
+
+    <!-- Instructions Section -->
+    <div class="instructions">
+      <h3>How to Use the LIC Maturity Calculator:</h3>
+      <ol>
+        <li>Enter the <strong>Policy Amount</strong> (the total amount you invested in your LIC policy).</li>
+        <li>Enter the <strong>Policy Term</strong> (the duration of your policy in years).</li>
+        <li>Enter the <strong>Interest Rate</strong> (the annual interest rate offered by your LIC policy).</li>
+        <li>Click on <strong>Calculate Maturity Amount</strong> to see the result.</li>
+      </ol>
+    </div>
+  </main>
+
+  <!-- Footer with Ad Space and Useful Text -->
+  <footer>
+    <div class="footer-ad">
+      <p>Ad Space (Footer)</p>
+    </div>
+    <p>&copy; 2023 Vaidick Healing. All rights reserved. | <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
+    <p>Disclaimer: This calculator provides an estimate of your LIC maturity amount. For exact values, consult your LIC agent or policy document.</p>
+  </footer>
+
+  <!-- Popup Video Ad -->
+  <div id="popupAd" class="popup">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <video controls>
+      <source src="ad-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Sidebar Ads -->
+  <div class="sidebar left-sidebar">
+    <p>Ad Space (Left Sidebar)</p>
+  </div>
+  <div class="sidebar right-sidebar">
+    <p>Ad Space (Right Sidebar)</p>
+  </div>
+
+  <script>
+    // LIC Maturity Calculator Logic
+    document.getElementById('licCalculator').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const policyAmount = parseFloat(document.getElementById('policyAmount').value);
+      const policyTerm = parseFloat(document.getElementById('policyTerm').value);
+      const interestRate = parseFloat(document.getElementById('interestRate').value);
+
+      const maturityAmount = policyAmount * Math.pow(1 + interestRate / 100, policyTerm);
+      document.getElementById('maturityAmount').textContent = `₹${maturityAmount.toFixed(2)}`;
+    });
+
+    // Popup Ad Logic
+    window.onload = function () {
+      setTimeout(() => {
+        document.getElementById('popupAd').style.display = 'block';
+      }, 5000); // Show popup after 5 seconds
+    };
+
+    function closePopup() {
+      document.getElementById('popupAd').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
